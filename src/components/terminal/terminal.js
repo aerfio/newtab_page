@@ -15,25 +15,16 @@ class Terminal extends React.Component {
     //
     // };
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            // left: 'calc(-30% - 1px)',
-            // left:'calc(-30% - 1px)',
-        }
-    }
 
     render() {
         let text;
         switch (this.props.value) {
             case '0': {
-                // this.setState({left: 'calc(-30% - 1px)'});
                 text = '-30%';
                 console.log('0 term');
                 break;
             }
             case '1': {
-                // this.setState({left: '0'});
                 text = '0';
                 console.log('1 term');
                 break;
@@ -50,6 +41,4 @@ class Terminal extends React.Component {
     }
 
 }
-
-// onClick={()=>{this.move()}}
 export default Terminal;

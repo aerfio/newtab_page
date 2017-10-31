@@ -45,14 +45,12 @@ class Searchbar extends React.Component {
             return 't';
         }
 
-
-
-
-        //google cannot into '#'
+        //google cannot into '#' or '&'
         let link;
-        if (data.includes('#')) {
-            //*todo zmien to na immutable shit*/
-            link = data.replace('#', '%23');
+        if (data.includes('#') || data.includes('&')) {
+            link = data.replace(/[#&]/g, function (x) {
+                return x.replace(x, '%' + (x.charCodeAt(0) - 12))
+            })
         }
         else link = data;
 
