@@ -2,8 +2,7 @@
     z-index: 1000;
     position: fixed;
     bottom: 0;
-    /*todo zmien kolor tego na kolor tla*/
-    border: 1px solid #ff00db;
+    /*border: 1px solid #ff00db;*/
     border-left-color: dimgray;
     border-bottom-color: dimgray;
     width: 30%;
@@ -13,6 +12,7 @@
     -moz-transition-duration: 0.2s;
     -o-transition-duration: 0.2s;
     transition-duration: 0.2s;
+    transition-timing-function: ease;
     /*background-color: blue;*/
 }
 

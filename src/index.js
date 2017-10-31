@@ -65,7 +65,7 @@ class NavBar extends React.Component {
     render() {
         return (
             <div id='navdiv'>
-                <div id='navbar' onClick={() => this.props.onClick()}>
+                <div id='navbar'>
                     <NavButton text={'Personal'} onClick={() => this.setState({value: 0})}/>
                     <NavButton text={'Stuff'} onClick={() => this.setState({value: 1})}/>
                 </div>
@@ -80,7 +80,7 @@ class Game extends React.Component {
     constructor() {
         super();
         this.state = {
-            value: 0,
+            value: '0',
         }
     }
 
@@ -91,16 +91,16 @@ class Game extends React.Component {
                 <Plan/>
                 <Today/>
                 <Clock/>
-                <Searchbar/>
-                <NavBar onClick={() => {
-                    this.setState({value: 23});
-                    console.log('click')
+                <Searchbar onSubmit={() => {
+                    this.setState({value: this.state.value === '0' ? '1' : '0'}), console.log(this.state.value + 'index')
                 }}/>
+                <NavBar/>
             </div>
         );
     }
 }
 
+// onClick={()=>{this.setState({value: this.state.value==='0' ? '1' : '0'})}}
 
 // ========================================
 

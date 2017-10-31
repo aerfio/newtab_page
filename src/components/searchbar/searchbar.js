@@ -15,8 +15,17 @@ class Searchbar extends React.Component {
 
     handleSubmit(event) {
         let link = this.redirect();
-        window.location.assign(link);
-        event.preventDefault();
+
+        //showing/hiding terminal
+        if (link === 't') {
+            event.preventDefault();
+            console.log('ima here');
+            this.props.onSubmit();
+        }
+        else {
+            window.location.assign(link);
+            event.preventDefault();
+        }
     }
 
     redirect() {
@@ -30,6 +39,14 @@ class Searchbar extends React.Component {
         else {
             data = this.state.value;
         }
+
+        //special case to show/hide terminal
+        if (data === 't' || data === 'term') {
+            return 't';
+        }
+
+
+
 
         //google cannot into '#'
         let link;
