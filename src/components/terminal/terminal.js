@@ -17,7 +17,7 @@ class Terminal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            left: '0',
+            left: 'calc(-30% - 1px)',
         }
     }
 
