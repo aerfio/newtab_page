@@ -1,0 +1,21 @@
+#plan {
+    z-index: 1000;
+    position: fixed;
+    top: 15px;
+    right: -612px;
+    width: 614px;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    /*background-color: blue;*/
+}
+
+#plan:hover {
+    right: 0px;
+}
+
+#plan img {
+    margin: 0px;
+    max-width: 100%;
+}

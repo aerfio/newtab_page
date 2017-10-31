@@ -1,0 +1,9 @@
+#searchbar {
+    margin-left: 35%;
+    /*margin-right: auto;*/
+    width: 30%;
+    text-align: center;
+
+    /*this works*/
+    /*border:none;*/
+}
