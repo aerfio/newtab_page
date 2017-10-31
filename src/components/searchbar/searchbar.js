@@ -19,7 +19,7 @@ class Searchbar extends React.Component {
         //showing/hiding terminal
         if (link === 't') {
             event.preventDefault();
-            console.log('ima here');
+            this.setState({value: ''});
             this.props.onSubmit();
         }
         else {
@@ -69,9 +69,12 @@ class Searchbar extends React.Component {
     }
 
     render() {
+
+
         return (
             <form onSubmit={this.handleSubmit}>
-                <input placeholder={'Search'} autoFocus id='searchbar' type="text" value={this.state.value}
+                <input placeholder={'Search'} autoFocus autoComplete={'off'} id='searchbar' type="text"
+                       value={this.state.value}
                        onChange={this.handleChange}/>
             </form>
 

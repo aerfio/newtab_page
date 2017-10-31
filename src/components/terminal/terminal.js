@@ -3,18 +3,35 @@ import './terminal.css';
 
 
 class Terminal extends React.Component {
-    // move = () => {
-    //     this.props.onClick();
-    //     if (this.state.left === 'calc(-30% - 1px)') {
-    //         this.setState({left: '0'})
-    //
-    //     }
-    //     else {
-    //         this.setState({left: 'calc(-30% - 1px)'})
-    //     }
-    //
-    // };
+    constructor(props) {
+        super(props);
+        this.state = {value: ''};
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
 
+    static focusHere() {
+        document.getElementById('terminal').focus();
+    }
+
+    handleChange(event) {
+        let text = event.target.value.substring(1);
+        this.setState({value: text});
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        switch (this.state.value) {
+            case 'help': {
+                this.setState({value: this.state.value + 'lol'});
+                break;
+            }
+            default: {
+                this.setState({value: ""});
+                break;
+            }
+        }
+    }
 
     render() {
         let text;
@@ -26,7 +43,9 @@ class Terminal extends React.Component {
             }
             case '1': {
                 text = '0';
+                Terminal.focusHere();
                 console.log('1 term');
+
                 break;
             }
             default: {
@@ -35,10 +54,14 @@ class Terminal extends React.Component {
                 break;
             }
         }
-        return (<div id='term' style={{left: text}}>
-            {text + "+propsy: " + this.props.value}
+
+        return (<div id='termDiv' style={{left: text}}>
+            <form onSubmit={this.handleSubmit}><input placeholder={'Search'} id='terminal' type="text"
+                                                      value={'>' + this.state.value}
+                                                      onChange={this.handleChange}/></form>
         </div>);
     }
 
 }
+
 export default Terminal;

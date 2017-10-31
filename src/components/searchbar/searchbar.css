@@ -3,7 +3,10 @@
     /*margin-right: auto;*/
     width: 30%;
     text-align: center;
-
+    outline: none;
     /*this works*/
-    /*border:none;*/
+    border-bottom: 1px solid black;
+    border-right-style: none;
+    border-left-style: none;
+    border-top-style: none;
 }

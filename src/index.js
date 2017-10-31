@@ -91,8 +91,10 @@ class Game extends React.Component {
                 <Plan/>
                 <Today/>
                 <Clock/>
-                <Searchbar onSubmit={() => {
-                    this.setState({value: this.state.value === '0' ? '1' : '0'}), console.log(this.state.value + 'index')
+                <Searchbar
+                    value={this.state.value}
+                    onSubmit={() => {
+                        this.setState({value: this.state.value === '0' ? '1' : '0'})
                 }}/>
                 <NavBar/>
             </div>
@@ -100,9 +102,6 @@ class Game extends React.Component {
     }
 }
 
-// onClick={()=>{this.setState({value: this.state.value==='0' ? '1' : '0'})}}
-
-// ========================================
 
 ReactDOM.render(
     <Game/>,
