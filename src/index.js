@@ -8,6 +8,8 @@ import Plan from './components/plan/plan'
 import Terminal from './components/terminal/terminal'
 import Weather from './components/terminal/weather'
 
+
+
 class Square extends React.Component {
     render() {
         let personalTab = Array.of('Personal', 'Fagbook', 'Onet', 'ImgSearch', 'Trello', 'dumblr');
@@ -26,6 +28,7 @@ class Square extends React.Component {
                 page = stuffTab;
                 links = stuffLinks;
                 break;
+            // todo add case 2 which is todo box
             default:
                 page = personalTab;
                 links = personalLinks;
@@ -69,6 +72,7 @@ class NavBar extends React.Component {
                 <div id='navbar'>
                     <NavButton text={'Personal'} onClick={() => this.setState({value: 0})}/>
                     <NavButton text={'Stuff'} onClick={() => this.setState({value: 1})}/>
+                    <NavButton text={'Todo'} onClick={() => this.setState({value: 2})}/>
                 </div>
                 <Square value={this.state.value}/>
             </div>
