@@ -41,14 +41,11 @@ class Terminal extends React.Component {
         switch (this.props.value) {
             case '0': {
                 text = '-30%';
-                console.log('0 term');
                 break;
             }
             case '1': {
                 text = '0';
                 Terminal.focusHere();
-                console.log('1 term');
-
                 break;
             }
             default: {

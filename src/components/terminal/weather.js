@@ -11,16 +11,15 @@ class Weather extends React.Component {
             if (err) {
                 console.log('error:');
             } else {
-                console.log('body:', body);
+                let weather = JSON.parse(body);
+                console.log('weather:', weather);
             }
         });
 
 
         return (
             <div>
-                lol
             </div>
-
         );
 
 
