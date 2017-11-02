@@ -22,6 +22,10 @@ class Searchbar extends React.Component {
             this.setState({value: ''});
             this.props.onSubmit();
         }
+        else if (link.split(' ')[0] === 'chan') {
+            window.location.assign('https://boards.4chan.org/' + link.split(' ')[1] + '/');
+            event.preventDefault();
+        }
         else {
             window.location.assign(link);
             event.preventDefault();
@@ -40,9 +44,15 @@ class Searchbar extends React.Component {
             data = this.state.value;
         }
 
+        let patt = /[a-zA-Z0-9]+/g;
+
         //special case to show/hide terminal
         if (data === 't' || data === 'term') {
             return 't';
+        }
+
+        else if (data.split(' ')[0] === 'chan' && patt.test(data.split(' ')[1])) {
+            return 'chan ' + data.split(' ')[1];
         }
 
         //google cannot into '#' or '&'

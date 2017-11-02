@@ -5,7 +5,10 @@ import './terminal.css';
 class Terminal extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {value: ''};
+        this.state = {
+            value: '',
+            textA: '>lelelell\n>lelelelel'
+        };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -59,6 +62,7 @@ class Terminal extends React.Component {
             <form onSubmit={this.handleSubmit}><input placeholder={'Search'} id='terminal' type="text"
                                                       value={'>' + this.state.value}
                                                       onChange={this.handleChange}/></form>
+            <textarea tabIndex={'20'} id='textarea' readOnly={'true'}>{this.state.textA}</textarea>
         </div>);
     }
 

@@ -1,13 +1,20 @@
+#textarea, #termDiv, #terminal {
+    background-color: dimgray;
+}
+
+#textarea, #terminal {
+    caret-color: red;
+    font-size: 15px;
+    font-family: Consolas;
+}
+
 #termDiv {
     z-index: 1000;
     position: fixed;
     bottom: 0;
     /*border: 1px solid #ff00db;*/
-    border-left-color: dimgray;
-    border-bottom-color: dimgray;
     width: 30%;
     height: 50%;
-    background-color: dimgray;
     -webkit-transition-duration: 0.2s;
     -moz-transition-duration: 0.2s;
     -o-transition-duration: 0.2s;
@@ -18,11 +25,18 @@
 
 #terminal {
     outline-style: none;
-    background-color: dimgray;
     border: 0;
-    caret-color: red;
+
 }
 
+#textarea {
+    resize: none;
+    height: 90%;
+    width: 90%;
+    margin: 3px;
+    border: none;
+    background-color: aqua !important;
+}
 * {
     outline-style: none;
 }

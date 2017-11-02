@@ -6,6 +6,7 @@ import Today from './components/data/date'
 import Searchbar from './components/searchbar/searchbar'
 import Plan from './components/plan/plan'
 import Terminal from './components/terminal/terminal'
+import Weather from './components/terminal/weather'
 
 class Square extends React.Component {
     render() {
@@ -88,6 +89,7 @@ class Game extends React.Component {
         return (
             <div className="game">
                 <Terminal value={this.state.value}/>
+                <Weather/>
                 <Plan/>
                 <Today/>
                 <Clock/>
@@ -105,5 +107,6 @@ class Game extends React.Component {
 
 ReactDOM.render(
     <Game/>,
+
     document.getElementById('root')
 );
