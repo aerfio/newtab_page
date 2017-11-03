@@ -6,11 +6,11 @@ import Today from './components/data/date'
 import Searchbar from './components/searchbar/searchbar'
 import Plan from './components/plan/plan'
 import Terminal from './components/terminal/terminal'
-import Weather from './components/terminal/weather'
+import TodoBox from './components/todo/todo'
 
 
 
-class Square extends React.Component {
+class RedirectRectangle extends React.Component {
     render() {
         let personalTab = Array.of('Personal', 'Fagbook', 'Onet', 'ImgSearch', 'Trello', 'dumblr');
         let personalLinks = Array.of('https://www.facebook.com/home.php', 'http://www.onet.pl', 'https://images.google.com/', 'https://trello.com/b/v9HDsFRa/2do', 'http://tumblr.com/');
@@ -34,6 +34,7 @@ class Square extends React.Component {
                 links = personalLinks;
                 break;
         }
+        if(this.props.value !== 2){
         return (
             <div className="square">
                 <h1 className='header'>{page[0]}</h1>
@@ -45,7 +46,12 @@ class Square extends React.Component {
                     <li><a href={links[4]}>{page[5]}</a></li>
                 </ul>
             </div>
-        );
+        );}
+        else{
+            return(
+                <TodoBox/>
+            );
+        }
     }
 }
 
@@ -74,7 +80,7 @@ class NavBar extends React.Component {
                     <NavButton text={'Stuff'} onClick={() => this.setState({value: 1})}/>
                     <NavButton text={'Todo'} onClick={() => this.setState({value: 2})}/>
                 </div>
-                <Square value={this.state.value}/>
+                <RedirectRectangle value={this.state.value}/>
             </div>
         );
     }
@@ -94,7 +100,6 @@ class Game extends React.Component {
             <div className="game">
                 <Terminal value={this.state.value}  onSubmit={() => {this.setState({value: this.state.value === '0' ? '1' : '0'})
                 }}/>
-                <Weather/>
                 <Plan/>
                 <Today/>
                 <Clock/>

@@ -1,6 +1,6 @@
 import React from 'react';
 import './terminal.css';
-import request from 'request';
+
 
 class Terminal extends React.Component {
     constructor(props) {
@@ -8,7 +8,7 @@ class Terminal extends React.Component {
         this.state = {
             textA: '',
             value: '',
-            weather: '',
+            data: [],
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,14 +27,24 @@ class Terminal extends React.Component {
 
         switch (this.state.value) {
             case 'help': {
-                this.setState({textA: 'List of avalaible commands:\nw - weather\nmu - redirect to 4chan /mu/ board\nrau1 - Studies'});
+                this.setState({textA: 'List of avalaible commands:\nw - current weather\nmu - redirect to 4chan /mu/ board\nrau1 - Studies'});
                 this.setState({value: ""});
                 break;
             }
             case 'w':
             {
-                this.setState({textA: this.getWeather()});
+                let weather = this.getCurrentWeather();
+                this.setState({textA: weather});
                 this.setState({value: ""});
+                break;
+            }
+            case 'wind':{
+                this.setState({textA:'0.3-1.5 m/s - Bardzo słaby powiew\n' +
+                '1.6-3.3 m/s - Odczuwa się istnienie powiewu\n' +
+                '3.4-5.4 m/s - Powierzchnia wody stojącej marszczy się\n' +
+                '5.5-7.9 m/s - Wiatr unosi z ziemi kurz i suche liście\n' +
+                '8.0-10.7 m/s - Poruszają się gałęzie drzew; wiatr gwiżdże w uszach\n' +
+                '10.8-13.8 m/s - Poruszają się grube gałęzie drzew\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nlol', value: ''});
                 break;
             }
             case 'mu':{
@@ -61,28 +71,18 @@ class Terminal extends React.Component {
             }
         }
     }
-
-    getWeather(){
+    componentDidMount() {
+        //fucking weather I swear to god
         let apiKey = 'af6eccccbe9e42573102a3f5a16ceb48';
         let city = 'Gliwice';
-        let url = 'http://api.openweathermap.org/data/2.5/find?q=' + city + '&units=metric&appid=' + apiKey;
-        // eslint-disable-next-line
-        let openWeather = '';
-        request.get(url, function (err, res, body) {
-            if (err) {
-                console.log('error ');
-            } else {
-                console.log('ima here');
-                /*todo get why the fuck does it work that way*/
-               openWeather=JSON.parse(body);
-               console.log(openWeather);
-            }
-        });
-        //why the hell does it not work
-        //fuck you different scope
-        console.log(this.state.weather);
-        // return openWeather.toString();
-        return 'tutaj bedzie obiekt z pogoda; linia 71 term';
+        let url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric&appid=' + apiKey;
+        fetch(url)
+            .then( (response) => {
+                return response.json() })
+            .then( (json) => {
+               // console.log(json);
+                this.setState({data: json});
+            });
     }
 
 
@@ -112,6 +112,11 @@ class Terminal extends React.Component {
         </div>);
     }
 
+    getCurrentWeather() {
+    let pogoda = this.state.data;
+return 'Current weather:\n'+pogoda.weather[0].description.replace(/\b\w/g, l => l.toUpperCase())+ '\nTemp: '+ pogoda.main.temp+ '°C\nClouds: '+pogoda.clouds.all+'%' +
+    '\nWind: '+pogoda.wind.speed+' m/s';
+    }
 }
 
 export default Terminal;

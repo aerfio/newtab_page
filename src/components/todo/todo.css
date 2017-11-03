@@ -1,0 +1,30 @@
+#todo{
+    height:25vh;
+    width:33%;
+    margin-right: auto;
+    margin-left: auto;
+
+    transition-duration: 0.1s;
+    text-decoration: none;
+}
+#notesInput{
+    margin-top:5%;
+    width: 100%;
+    text-align: center;
+    outline: none;
+    background-color: #92ffbd;
+    border-bottom: 1px solid black;
+    border-right-style: none;
+    border-left-style: none;
+    border-top-style: none;
+}
+#dynamic{
+    z-index:100;
+    position:fixed;
+    bottom:0;
+    left:0;
+    height: 100px;
+    width: 100px;
+    background-color: black;
+
+}
