@@ -11,9 +11,6 @@ class Weather extends React.Component {
         }
     }
 
-    jsonHandler=(body)=>{
-        console.log(JSON.parse(body));
-    };
 
     render() {
         let apiKey = 'af6eccccbe9e42573102a3f5a16ceb48';
@@ -24,13 +21,13 @@ class Weather extends React.Component {
             if (err) {
                 console.log('error:');
             } else {
-                cookies.set('myJSON', JSON.parse(body), { path: '/' });
+               // cookies.set('myJSON', JSON.parse(body), { path: '/' });
             }
         });
-        console.log(cookies.get('myJSON').list[0]);
+      //  console.log(cookies.get('myJSON').list[0]);
         return (
             <div>
-                {cookies.get('myJSON').list[0].main.temp}
+
             </div>
         );
 

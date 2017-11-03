@@ -92,7 +92,8 @@ class Game extends React.Component {
     render() {
         return (
             <div className="game">
-                <Terminal value={this.state.value}/>
+                <Terminal value={this.state.value}  onSubmit={() => {this.setState({value: this.state.value === '0' ? '1' : '0'})
+                }}/>
                 <Weather/>
                 <Plan/>
                 <Today/>
