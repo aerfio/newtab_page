@@ -59,6 +59,18 @@ class Terminal extends React.Component {
                 this.setState({value: ""});
                 break;
             }
+            case 'e':{
+                document.getElementById('searchbar').focus();
+                this.props.onSubmit();
+                this.setState({value: "", textA: ''});
+                break;
+            }
+            case 't':{
+                document.getElementById('searchbar').focus();
+                this.props.onSubmit();
+                this.setState({value: "", textA: ''});
+                break;
+            }
             case 'exit':{
                 document.getElementById('searchbar').focus();
                 this.props.onSubmit();
@@ -111,7 +123,7 @@ class Terminal extends React.Component {
             <textarea tabIndex={'20'} id='textarea' autoCorrect={'off'}  spellCheck={'false'} readOnly={'true'} value={this.state.textA}/>
         </div>);
     }
-
+    //todo do weather forcast for 5 days and maybe sth more
     getCurrentWeather() {
     let pogoda = this.state.data;
 return 'Current weather:\n'+pogoda.weather[0].description.replace(/\b\w/g, l => l.toUpperCase())+ '\nTemp: '+ pogoda.main.temp+ '°C\nClouds: '+pogoda.clouds.all+'%' +

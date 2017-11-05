@@ -6,14 +6,10 @@ const cookies = new Cookies();
 const max = new Cookies();
 
 class TodoBox extends React.Component {
-
     maxLen = (number) => {
         if (max.get(0) == null || !Number.isInteger(max.get(0))) {
             max.set(0, 0, {path: '/'});
-            console.log('line 17');
         }
-        console.log('get0' + max.get(0) + 'number: ' + number);
-
         if (number > max.get(0)) {
             max.set(0, number, {path: '/'});
             return number;
@@ -24,7 +20,7 @@ class TodoBox extends React.Component {
     };
     handleChange = (event) => {
         this.setState({value: event.target.value});
-
+        //console.log(cookies.getAll());
     };
     handleSubmit = (event) => {
         let length = Object.keys(cookies.getAll()).length;
@@ -41,23 +37,26 @@ class TodoBox extends React.Component {
         }
     }
 
+// <div className={'noteText'}>{'note #'+(index+1)+': '+cookies.get(number)}</div>
     render() {
         return (
             <div id={'todo'}>
-                <form onSubmit={this.handleSubmit}>
+                <form id={'todoForm'} onSubmit={this.handleSubmit}>
                     <input autoComplete={'off'} autoFocus={'true'} id='notesInput' type="text"
                            value={this.state.value}
                            onChange={this.handleChange}/>
                 </form>
-                {Object.keys(cookies.getAll()).length > 0 && Object.keys(cookies.getAll()).map((number, index) => <div
-                    key={index}>{number}</div>)}
-                <button onClick={() => {
-                    console.log('53: maxget0: ' + max.get(0));
-                    for (let i = 0; i < max.get(0); i++) {
-                        cookies.remove(i);
-                    }
-                    this.setState({value: ''});
-                }}>{'usun wszystkie notatki'}</button>
+                {/*fucking magic below: map all of the cookies to div but for the first one, which is probably implemented to show number of all cookies in object*/}
+                {Object.keys(cookies.getAll()).slice(1, Object.keys(cookies.getAll()).length).map((number, index) =>
+                    <div className={'outerDivTodo'} key={index}>
+                        <textarea className={'noteText'} unselectable={'on'} readOnly={'true'} autoCorrect={'off'}
+                                  spellCheck={'false'} value={'note #' + (index + 1) + ': ' + cookies.get(number)}/>
+                        <div className={'todoButton'} onClick={() => {
+                            cookies.remove(number);
+                            this.setState({value: ''});
+                        }}>{'X'}</div>
+                    </div>)
+                }
             </div>
         );
     }

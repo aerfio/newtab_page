@@ -7,10 +7,22 @@ import Searchbar from './components/searchbar/searchbar'
 import Plan from './components/plan/plan'
 import Terminal from './components/terminal/terminal'
 import TodoBox from './components/todo/todo'
-
-
-
+import AnimateOnChange from 'react-animate-on-change'
+function Anim (props){
+    return <AnimateOnChange
+        baseClassName="message"
+        animationClassName="message-clicked"
+        animate={true}>
+        {props.value}
+    </AnimateOnChange>
+}
 class RedirectRectangle extends React.Component {
+    constructor(props){
+    super(props);
+    this.state={
+        on:0,
+    }
+    }
     render() {
         let personalTab = Array.of('Personal', 'Fagbook', 'Onet', 'ImgSearch', 'Trello', 'dumblr');
         let personalLinks = Array.of('https://www.facebook.com/home.php', 'http://www.onet.pl', 'https://images.google.com/', 'https://trello.com/b/v9HDsFRa/2do', 'http://tumblr.com/');
@@ -28,25 +40,29 @@ class RedirectRectangle extends React.Component {
                 page = stuffTab;
                 links = stuffLinks;
                 break;
-            // todo add case 2 which is todo box
+
             default:
                 page = personalTab;
                 links = personalLinks;
                 break;
         }
-        if(this.props.value !== 2){
+        if(this.props.value !==2){
+
         return (
             <div className="square">
-                <h1 className='header'>{page[0]}</h1>
-                <ul>
-                    <li><a href={links[0]}>{page[1]}</a></li>
-                    <li><a href={links[1]}>{page[2]}</a></li>
-                    <li><a href={links[2]}>{page[3]}</a></li>
-                    <li><a href={links[3]}>{page[4]}</a></li>
-                    <li><a href={links[4]}>{page[5]}</a></li>
-                </ul>
+                     <h1 className='header'>{<Anim value ={page[0]}/>}</h1>
+                        <ul>
+                            <li><a href={links[0]}>{<Anim value ={page[1]}/>}</a></li>
+                            <li><a href={links[1]}>{<Anim value ={page[2]}/>}</a></li>
+                            <li><a href={links[2]}>{<Anim value ={page[3]}/>}</a></li>
+                            <li><a href={links[3]}>{<Anim value ={page[4]}/>}</a></li>
+                            <li><a href={links[4]}>{<Anim value ={page[5]}/>}</a></li>
+                        </ul>
             </div>
-        );}
+        );
+
+
+        }
         else{
             return(
                 <TodoBox/>
@@ -73,6 +89,7 @@ class NavBar extends React.Component {
     }
 
     render() {
+
         return (
             <div id='navdiv'>
                 <div id='navbar'>
@@ -81,6 +98,7 @@ class NavBar extends React.Component {
                     <NavButton text={'Todo'} onClick={() => this.setState({value: 2})}/>
                 </div>
                 <RedirectRectangle value={this.state.value}/>
+
             </div>
         );
     }

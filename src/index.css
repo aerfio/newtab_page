@@ -3,10 +3,12 @@
 
 body {
     font-family: 'Lato', sans-serif;
-
     margin: 0;
     padding: 0;
     outline-style: none;
+}
+.message-clicked {
+    animation: fadeIn 0.5s;
 }
 
 .square {
@@ -18,14 +20,15 @@ body {
     background-color: #b4c2ad;
     transition-duration: 0.1s;
     text-decoration: none;
+    animation: fadeIn .5s;
 }
 
 .square:hover {
     background-color: blue;
+
 }
 
 #navdiv {
-    /*border: 2px solid #ff00db;*/
     height: 100%;
 }
 
@@ -72,4 +75,12 @@ a:visited {
 * {
     outline-style: none;
 }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
 
+    to {
+        opacity: 1;
+    }
+}

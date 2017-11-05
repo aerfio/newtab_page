@@ -26,7 +26,6 @@
 #terminal {
     outline-style: none;
     border: 0;
-
 }
 
 #textarea {
@@ -40,5 +39,3 @@
 * {
     outline-style: none;
 }
-
-/*todo blinking cursor*/

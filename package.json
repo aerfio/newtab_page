@@ -5,8 +5,10 @@
   "dependencies": {
     "axios": "^0.17.0",
     "react": "^16.0.0",
+    "react-animate-on-change": "^1.0.1",
     "react-dom": "^16.0.0",
     "react-scripts": "1.0.14",
+    "react-transition-group": "^1.2.1",
     "universal-cookie": "^2.1.0"
   },
   "scripts": {
