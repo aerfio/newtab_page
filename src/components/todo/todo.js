@@ -1,6 +1,7 @@
 import Cookies from 'universal-cookie';
 import React from 'react';
 import './todo.css'
+import './css/fontello.css'
 
 const cookies = new Cookies();
 const max = new Cookies();
@@ -50,11 +51,11 @@ class TodoBox extends React.Component {
                 {Object.keys(cookies.getAll()).slice(1, Object.keys(cookies.getAll()).length).map((number, index) =>
                     <div className={'outerDivTodo'} key={index}>
                         <textarea className={'noteText'} unselectable={'on'} readOnly={'true'} autoCorrect={'off'}
-                                  spellCheck={'false'} value={'note #' + (index + 1) + ': ' + cookies.get(number)}/>
+                                  spellCheck={'false'} value={'#' + (index + 1) + ': ' + cookies.get(number)}/>
                         <div className={'todoButton'} onClick={() => {
                             cookies.remove(number);
                             this.setState({value: ''});
-                        }}>{'X'}</div>
+                        }}>{<i className="icon-trash-1"></i>}</div>
                     </div>)
                 }
             </div>

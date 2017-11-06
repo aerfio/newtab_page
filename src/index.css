@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
 /*todo change font for clock*/
 
 body {
@@ -6,13 +7,17 @@ body {
     margin: 0;
     padding: 0;
     outline-style: none;
+    background-color: #222222;
 }
 .message-clicked {
     animation: fadeIn 0.5s;
 }
-
+.square > ul{
+    padding-bottom: 0.75em;
+}
 .square {
     font-size:1em;
+
     height: 20%;
     width: 20%;
     margin-right: auto;
@@ -24,8 +29,7 @@ body {
 }
 
 .square:hover {
-    background-color: blue;
-
+    background-color: #6ca0ff;
 }
 
 #navdiv {
@@ -36,26 +40,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 #navbutton {
-    font-size:2em;
-    background-color: #ffe82e;
+    font-size:2.5vw;
+    color:#ebdbb2;
+    border: 1px solid #ebdbb2;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20vh;
-    width: 10vw;
+    padding: 4vh;
+    min-width: 8vw;
     margin: 10px;
 }
+#navbutton:hover{
+    color:#222222;
+    background-color: #ebdbb2;
 
+}
 .header {
     text-align: center;
     font-size: 2em;
-}
-
-.game {
-    /*border: 3px solid #fbb41f;*/
 }
 
 a {

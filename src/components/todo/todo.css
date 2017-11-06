@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin-ext');
 #todo{
     height:40vh;
     width:33%;
     margin-right: auto;
     margin-left: auto;
-    background-color: #d1b2e2;
+
     transition-duration: 0.1s;
     text-decoration: none;
     animation: fadeIn .3s;
@@ -19,18 +20,24 @@
 }
 #todoForm{
     margin-bottom: 5px;
+    background-color : #222222;
 }
-
+input{
+    background-color: #222222;
+}
 #notesInput{
     margin-top:5%;
     width: 100%;
     text-align: center;
     outline: none;
-    background-color: #92ffbd;
-    border-bottom: 1px solid black;
+    font-family: 'Slabo 27px', serif;
+    font-size:2em;
+    border-bottom: 1px solid #ebdbb2;
     border-right-style: none;
     border-left-style: none;
     border-top-style: none;
+    color: #ebdbb2;
+
 }
 .outerDivTodo{
     height:10%;
@@ -40,22 +47,27 @@
     /*border: 1px solid black;*/
     background-color: inherit;
     animation: fadeInUp .75s;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ebdbb2;
+    margin:10px;
 }
 .noteText{
-    max-height: 100%;
+
+    max-height: 90%;
     width:90%;
     border: none;
     resize: none;
     /*next two lines: no cursor */
+    font-family: 'Slabo 27px', serif;
     color: transparent;
-    text-shadow: 0 0 0 #000000;
-   font-size: 1.5em;
-    background-color: inherit;
+    text-shadow: 0 0 0 #ebdbb2;
+    font-size: 1.5em;
+    /*border: 1px solid black;*/
+    background-color: transparent;
 
 }
 .todoButton{
-    border: 1px solid black;
-
+    /*border: 1px solid black;*/
 }
 
 @keyframes fadeInUp {

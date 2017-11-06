@@ -8,6 +8,7 @@ import Plan from './components/plan/plan'
 import Terminal from './components/terminal/terminal'
 import TodoBox from './components/todo/todo'
 import AnimateOnChange from 'react-animate-on-change'
+
 function Anim (props){
     return <AnimateOnChange
         baseClassName="message"

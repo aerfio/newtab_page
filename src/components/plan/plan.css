@@ -12,10 +12,10 @@
 }
 
 #plan:hover {
-    right: 0px;
+    right: 0;
 }
 
 #plan img {
-    margin: 0px;
+    margin: 0;
     max-width: 100%;
 }

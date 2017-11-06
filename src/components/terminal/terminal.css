@@ -1,11 +1,12 @@
 #textarea, #termDiv, #terminal {
     background-color: dimgray;
+    font-family: 'Inconsolata', monospace;
 }
 
 #textarea, #terminal {
     caret-color: red;
     font-size: 15px;
-    font-family: Consolas;
+
 }
 
 #termDiv {
