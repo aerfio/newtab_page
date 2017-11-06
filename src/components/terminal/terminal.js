@@ -1,7 +1,6 @@
 import React from 'react';
 import './terminal.css';
 
-
 class Terminal extends React.Component {
     constructor(props) {
         super(props);
@@ -20,7 +19,7 @@ class Terminal extends React.Component {
     }
 
     handleChange(event) {
-        this.setState({value: event.target.value});
+        this.setState({value: event.target.value.substring(1)});
     }
 
     handleSubmit(event) {
@@ -115,8 +114,10 @@ class Terminal extends React.Component {
             .then((json) => {
                 this.setState({dataFiveDays: json});
             });
-
-
+            const input = this.input;
+            const length = input.value.length;
+            input.focus();
+            input.setSelectionRange(length, length);
     }
 
 
@@ -140,7 +141,7 @@ class Terminal extends React.Component {
 
         return (<div id='termDiv' style={{left: text}}>
             <form onSubmit={this.handleSubmit}>
-                <input id='terminal' type="text" value={this.state.value} autoCorrect={'off'} spellCheck={'false'}
+                <input ref={ref => this.input = ref} id='terminal' type="terminal" value={'>'+this.state.value} autoCorrect={'off'} spellCheck={'false'}
                        onChange={this.handleChange}/>
             </form>
             <textarea tabIndex={'20'} id='textarea' autoCorrect={'off'} spellCheck={'false'} readOnly={'true'}

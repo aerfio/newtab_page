@@ -14,3 +14,7 @@
     border-left-style: none;
     border-top-style: none;
 }
+input[type='text']::placeholder{
+
+    color:#ebdbb2;
+}

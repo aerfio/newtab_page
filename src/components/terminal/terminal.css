@@ -1,19 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
 #textarea, #termDiv, #terminal {
-    background-color: dimgray;
+
     font-family: 'Inconsolata', monospace;
 }
 
 #textarea, #terminal {
-    caret-color: red;
+    margin-left: 10px;
+    caret-color: #2bf100;
     font-size: 15px;
-
+}
+input[type='terminal']{
+    background-color: #151515;
+    color:#2bf100 ;
 }
 
 #termDiv {
     z-index: 1000;
     position: fixed;
     bottom: 0;
-    /*border: 1px solid #ff00db;*/
+    background-color: #151515;
     width: 30%;
     height: 50%;
     -webkit-transition-duration: 0.2s;
@@ -21,12 +26,12 @@
     -o-transition-duration: 0.2s;
     transition-duration: 0.2s;
     transition-timing-function: ease;
-    /*background-color: blue;*/
 }
 
 #terminal {
     outline-style: none;
     border: 0;
+    width:90%;
 }
 
 #textarea {
@@ -34,8 +39,10 @@
     height: 90%;
     width: 90%;
     margin: 3px;
+    margin-left:10px;
     border: none;
-    background-color: aqua !important;
+    background-color: #151515;
+    color: #00dc00;
 }
 * {
     outline-style: none;

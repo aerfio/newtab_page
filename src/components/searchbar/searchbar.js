@@ -15,7 +15,10 @@ class Searchbar extends React.Component {
 
     handleSubmit(event) {
         let link = this.redirect();
-
+        if (link === 'mu') {
+            window.location.assign('https://boards.4chan.org/mu/');
+            event.preventDefault();
+        }
         //showing/hiding terminal
         if (link === 't') {
             event.preventDefault();
@@ -50,7 +53,9 @@ class Searchbar extends React.Component {
         if (data === 't' || data === 'term') {
             return 't';
         }
-
+        if (data === 'mu') {
+            return 'mu';
+        }
         else if (data.split(' ')[0] === 'chan' && patt.test(data.split(' ')[1])) {
             return 'chan ' + data.split(' ')[1];
         }
