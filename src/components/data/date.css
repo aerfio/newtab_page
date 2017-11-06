@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin-ext');
 #data {
-    font-size: 50px;
+    font-size: 3em;
+    font-family: 'Slabo 27px', serif;
     text-align: center;
     /*padding:5px;*/
     margin-left: auto;

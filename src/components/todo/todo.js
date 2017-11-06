@@ -43,7 +43,7 @@ class TodoBox extends React.Component {
         return (
             <div id={'todo'}>
                 <form id={'todoForm'} onSubmit={this.handleSubmit}>
-                    <input autoComplete={'off'} autoFocus={'true'} id='notesInput' type="text"
+                    <input autoComplete={'off'} autoFocus={'true'} id='notesInput' placeholder={'Notes'} type="text"
                            value={this.state.value}
                            onChange={this.handleChange}/>
                 </form>

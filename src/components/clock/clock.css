@@ -1,10 +1,9 @@
-.clock {
 
-    font-size: 2em;
+/*todo change font for clock*/
+.clock {
+    font-size: 4em;
     text-align: center;
     color: #ebdbb2;
-    /*padding:5px;*/
     margin-left: auto;
     margin-right: auto;
-    /*border: 1px solid green;*/
 }
