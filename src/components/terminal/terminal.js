@@ -27,7 +27,7 @@ class Terminal extends React.Component {
 
         switch (this.state.value) {
             case 'help': {
-                this.setState({textA: 'List of avalaible commands:\nw - current weather\nmu - redirect to 4chan /mu/ board\nrau1 - Studies'});
+                this.setState({textA: 'List of avalaible commands:\nw - current weather\nwf - weather forecast for 5 days\nmu - redirect to 4chan /mu/ board\ne, exit or t - close terminal\nrau1 - Studies\nwind - help about wind speed from current weather'});
                 this.setState({value: ""});
                 break;
             }

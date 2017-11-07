@@ -8,6 +8,7 @@
     transition-duration: 0.1s;
     text-decoration: none;
     animation: fadeIn .3s;
+
 }
 
 @keyframes fadeIn {
@@ -21,12 +22,14 @@
 #todoForm{
     margin-bottom: 5px;
     background-color : #222222;
+
+
 }
 input{
     background-color: #222222;
 }
 #notesInput{
-    margin-top:5%;
+margin-top: 3%;
     width: 100%;
     text-align: center;
     outline: none;
@@ -52,7 +55,7 @@ input{
     margin:10px;
 }
 .noteText{
-    overflow: visible;
+    overflow: hidden;
     max-height: 90%;
     width:90%;
     border: none;
@@ -73,7 +76,7 @@ input{
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translate3d(0, 200%, 0);
+        transform: translate3d(0, 100%, 0);
     }
 
     to {

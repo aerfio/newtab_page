@@ -8,7 +8,6 @@ body {
     padding: 0;
     outline-style: none;
     background-color: #222222;
-    overflow: hidden;
 }
 .message-clicked {
     animation: fadeIn 0.5s;

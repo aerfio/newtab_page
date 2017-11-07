@@ -30,22 +30,14 @@ class TodoBox extends React.Component {
         event.preventDefault();
     };
 
-
-// <div className={'noteText'}>{'note #'+(index+1)+': '+cookies.get(number)}</div>
     render() {
         let tempTab = Array.of();
         for (let i = 0; i < localStorage.length; i++) {
             tempTab.push(localStorage.key(i));
         }
+        tempTab.sort((a,b)=>a-b);
         return (
             <div id={'todo'}>
-                <button onClick={() => {
-                    for (let i = 0; i < tempTab.length; i++) {
-                        console.log('tempTab['+i+']='+tempTab[i]+';localStorage.getItem('+tempTab[i]+')='+localStorage.getItem(localStorage.key(i)));
-                    }
-                }}>{'temptab'}</button>
-
-                <button onClick={() => localStorage.clear()}>{'clear'}</button>
                 <form id={'todoForm'} onSubmit={this.handleSubmit}>
                     <input autoComplete={'off'} autoFocus={'true'} id='notesInput' placeholder={'Notes'} type="text"
                            value={this.state.value}
