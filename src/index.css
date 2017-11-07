@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&subset=latin-ext');
 @import url('https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin-ext');
 
-/*todo change font for clock*/
 
 body {
     font-family: 'Lato', sans-serif;
@@ -9,6 +8,7 @@ body {
     padding: 0;
     outline-style: none;
     background-color: #222222;
+    overflow: hidden;
 }
 .message-clicked {
     animation: fadeIn 0.5s;
@@ -18,7 +18,7 @@ body {
     list-style-type: none;
 }
 .square > ul > li{
-    margin-right: 10px;
+    margin-right: 5%;
     color: #ebdbb2;
 }
 .square {

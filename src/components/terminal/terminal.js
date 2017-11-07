@@ -114,6 +114,8 @@ class Terminal extends React.Component {
             .then((json) => {
                 this.setState({dataFiveDays: json});
             });
+
+        //chrome fucks up cursor position within terminal without this
             const input = this.input;
             const length = input.value.length;
             input.focus();
