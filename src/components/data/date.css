@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif');
 #data {
     font-size: 3em;
-    font-family: 'Slabo 27px', serif;
+    font-family: 'Noto Serif', serif;
     text-align: center;
-    /*padding:5px;*/
     margin-left: auto;
     margin-right: auto;
-    /*border: 3px solid #2eff15;*/
     color: #ebdbb2;
     margin-bottom:20px;
     margin-top: 4vh;

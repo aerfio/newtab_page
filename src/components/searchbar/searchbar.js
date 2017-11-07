@@ -86,7 +86,7 @@ class Searchbar extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input placeholder={'Search'} autoFocus autoComplete={'off'} id='searchbar' type="text"
+                <input autoCorrect={'off'} spellCheck={'false'} placeholder={'Search'} autoFocus autoComplete={'off'} id='searchbar' type="text"
                        value={this.state.value}
                        onChange={this.handleChange}/>
             </form>

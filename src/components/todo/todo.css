@@ -4,7 +4,6 @@
     width:33%;
     margin-right: auto;
     margin-left: auto;
-
     transition-duration: 0.1s;
     text-decoration: none;
     animation: fadeIn .3s;
@@ -22,8 +21,6 @@
 #todoForm{
     margin-bottom: 5px;
     background-color : #222222;
-
-
 }
 input{
     background-color: #222222;
@@ -55,8 +52,8 @@ margin-top: 3%;
     margin:10px;
 }
 .noteText{
-    overflow: hidden;
-    max-height: 90%;
+    padding-top:5px;
+    max-height: 110%;
     width:90%;
     border: none;
     resize: none;
@@ -65,12 +62,8 @@ margin-top: 3%;
     color: transparent;
     text-shadow: 0 0 0 #ebdbb2;
     font-size: 1.5em;
-    /*border: 1px solid black;*/
     background-color: transparent;
 
-}
-.todoButton{
-    /*border: 1px solid black;*/
 }
 
 @keyframes fadeInUp {

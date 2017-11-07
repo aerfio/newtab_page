@@ -155,7 +155,7 @@ class Terminal extends React.Component {
     getFiveDaysWeather() {
         let forecast = this.state.dataFiveDays;
         if (forecast.length===0) {
-            return 'Can\'t connect to internet.F'
+            return 'Can\'t connect to internet'
         }
 
         for(var len=0;forecast.list[len]!==undefined;len++);
@@ -167,13 +167,7 @@ class Terminal extends React.Component {
                 tempTab.push(i);
             }
         }
-        //2017-11-06 21:00:00
-      //  let monthsNames = ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'];
-      //   let tabOfMonthsNumbers = [];
-      //   for (let i = 0; i < tempTab.length; i++) {
-      //       tabOfMonthsNumbers[i] = forecast.list[i].dt_txt.slice(5, 7);
-      //   }
-      //   let answer = tabOfMonthsNumbers.map(elem => monthsNames[elem - 1]);
+
         let toReturn='';
         for (let i=0;i<tempTab.length;i++) {//dzien miesiac godzina:minuty
             //following line makes temperatures in format: x.y°C. Without it there would be shit like 9°C and I want 9.0°C
@@ -187,15 +181,13 @@ class Terminal extends React.Component {
         return toReturn;
     }
 
-
     getCurrentWeather() {
         let pogoda = this.state.dataCurrent;
         if (pogoda.length===0) {
-            return 'Can\'t connect to internet.C';
+            return 'Can\'t connect to internet';
         }
         return 'Current weather:\n' + pogoda.weather[0].description.replace(/\b\w/g, l => l.toUpperCase()) + '\nTemp: ' + pogoda.main.temp + '°C\nClouds: ' + pogoda.clouds.all + '%' +
             '\nWind: ' + pogoda.wind.speed + ' m/s';
     }
 }
-
 export default Terminal;

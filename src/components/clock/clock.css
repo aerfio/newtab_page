@@ -1,6 +1,6 @@
-
-/*todo change font for clock*/
+@import url('https://fonts.googleapis.com/css?family=Lora&subset=latin-ext');
 .clock {
+    font-family: 'Lora', serif;
     font-size: 4em;
     text-align: center;
     color: #ebdbb2;

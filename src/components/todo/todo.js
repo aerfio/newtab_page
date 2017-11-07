@@ -39,16 +39,16 @@ class TodoBox extends React.Component {
         return (
             <div id={'todo'}>
                 <form id={'todoForm'} onSubmit={this.handleSubmit}>
-                    <input autoComplete={'off'} autoFocus={'true'} id='notesInput' placeholder={'Notes'} type="text"
+                    <input autoComplete={'off'} autoFocus={'true'} autoCorrect={'off'} spellCheck={'false'} id='notesInput' placeholder={'Notes'} type="text"
                            value={this.state.value}
                            onChange={this.handleChange}/>
                 </form>
                 {tempTab.map((number,index) =>
                     <div className={'outerDivTodo'} key={number}>
-                        <textarea className={'noteText'} unselectable={'on'} readOnly={'true'} autoCorrect={'off'}
+                        <textarea  className={'noteText'} unselectable={'on'} readOnly={'true'} autoCorrect={'off'}
                                   spellCheck={'false'}
 
-                                  value={'num: ' + number + '; index: ' +index+': ' +localStorage.getItem(tempTab[index])}/>
+                                  value={localStorage.getItem(tempTab[index])}/>
 
                         <div className={'todoButton'} onClick={() => {
                             localStorage.removeItem(tempTab[index]);
