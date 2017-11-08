@@ -2,16 +2,24 @@
   "name": "NewTabProject",
   "version": "0.1.0",
   "private": true,
+//  add this shit if you want to deploy app to github page
+//  "homepage": "https://aerfio.github.io/newtab_page",
   "dependencies": {
+    "firebase": "^4.6.1",
     "react": "^16.0.0",
     "react-animate-on-change": "^1.0.1",
     "react-dom": "^16.0.0",
     "react-scripts": "1.0.14"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.0.0"
   }
 }
