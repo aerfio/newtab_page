@@ -8,6 +8,7 @@ import Plan from './components/plan/plan'
 import Terminal from './components/terminal/terminal'
 import TodoBox from './components/todo/todo'
 import AnimateOnChange from 'react-animate-on-change'
+ // eslint-disable-next-line
 import fire from './fire';
 
 function Anim (props){
@@ -27,7 +28,7 @@ class RedirectRectangle extends React.Component {
     }
     render() {
         let personalTab = Array.of('Personal', 'Fagbook', 'Onet', 'ImgSearch', 'Trello', 'dumblr');
-        let personalLinks = Array.of('https://www.facebook.com/home.php', 'http://www.onet.pl', 'https://images.google.com/', 'https://trello.com/b/v9HDsFRa/2do', 'http://tumblr.com/');
+        let personalLinks = Array.of('https://www.facebook.com/home.php', 'http://www.onet.pl', 'https://images.google.com/', 'https://trello.com/b/v9HDsFRa/2do', 'http://mywallofnoise.tumblr.com/');
 
         let stuffTab = Array.of('Stuff', '/wg/', '/mu/', 'Google Pogoda', 'Google Drive', 'Studia rau1');
         let stuffLinks = Array.of('https://boards.4chan.org/wg/', 'https://boards.4chan.org/mu/', 'https://www.google.pl/#q=pogoda', 'https://drive.google.com/drive/my-drive', 'https://platforma.polsl.pl/rau1/course/index.php?categoryid=26');

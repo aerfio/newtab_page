@@ -1,6 +1,6 @@
 import React from 'react';
 import './terminal.css';
-
+import axios from 'axios';
 class Terminal extends React.Component {
     constructor(props) {
         super(props);
@@ -96,17 +96,19 @@ class Terminal extends React.Component {
         //fucking weather I swear to god
         let apiKey = 'af6eccccbe9e42573102a3f5a16ceb48';
         let city = 'Gliwice';
-        let url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric&appid=' + apiKey;
-        fetch(url)
-            .then((response) => {
-                return response.json()
-            })
-            .then((json) => {
-                this.setState({dataCurrent: json});
-            });
+        let url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric&appid=' + apiKey;
+        // fetch(url)
+        //     .then((response) => {
+        //         return response.json()
+        //     })
+        //     .then((json) => {
+        //     console.log(json);
+        //         this.setState({dataCurrent: json});
+        //     });
+       axios.get(url).then(response => this.setState({dataCurrent: response.data}));
 
         //5 days
-        url = 'http://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=metric&appid=' + apiKey;
+        url = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=metric&appid=' + apiKey;
         fetch(url)
             .then((response) => {
                 return response.json()
@@ -154,6 +156,7 @@ class Terminal extends React.Component {
 
     getFiveDaysWeather() {
         let forecast = this.state.dataFiveDays;
+        console.log(forecast);
         if (forecast.length===0) {
             return 'Can\'t connect to internet'
         }
@@ -172,7 +175,11 @@ class Terminal extends React.Component {
         for (let i=0;i<tempTab.length;i++) {//dzien miesiac godzina:minuty
             //following line makes temperatures in format: x.y°C. Without it there would be shit like 9°C and I want 9.0°C
             let temp=(Math.round(forecast.list[tempTab[i]].main.temp*10))%10===0 ? Math.round(forecast.list[tempTab[i]].main.temp*10)/10+'.0' : Math.round(forecast.list[tempTab[i]].main.temp*10)/10;
-            toReturn+=forecast.list[tempTab[i]].dt_txt.slice(8, 10) + '.' + forecast.list[tempTab[i]].dt_txt.slice(5, 7) + ' ' + forecast.list[tempTab[i]].dt_txt.slice(-8, -3)+': '+ temp+'°C; '+forecast.list[tempTab[i]].weather[0].description.replace(/\b\w/g, l => l.toUpperCase())+'\n';
+            if(temp>=0){
+                //otherwise temps under 0 are not aligned nicely
+                temp=' '+temp;
+            }
+            toReturn+=forecast.list[tempTab[i]].dt_txt.slice(8, 10) + '.' + forecast.list[tempTab[i]].dt_txt.slice(5, 7) + ' ' + forecast.list[tempTab[i]].dt_txt.slice(-8, -3)+': '+ temp+'°C, '+forecast.list[tempTab[i]].wind.speed+ ' m/s, '+forecast.list[tempTab[i]].weather[0].description.replace(/\b\w/g, l => l.toUpperCase())+'\n';
            //next line separates days so it looks more grouped
             if(i<tempTab.length-1 && forecast.list[tempTab[i]].dt_txt.slice(8, 10)!==forecast.list[tempTab[i+1]].dt_txt.slice(8, 10)){
                 toReturn+='\n';
