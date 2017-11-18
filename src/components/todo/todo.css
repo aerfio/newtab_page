@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif');
 #todo{
     height:40vh;
     width:33%;
@@ -30,7 +30,7 @@ margin-top: 3%;
     width: 100%;
     text-align: center;
     outline: none;
-    font-family: 'Slabo 27px', serif;
+    font-family: 'Noto Serif', serif;
     font-size:2em;
     border-bottom: 1px solid #ebdbb2;
     border-right-style: none;
@@ -58,7 +58,7 @@ margin-top: 3%;
     border: none;
     resize: none;
     /*next two lines: no cursor */
-    font-family: 'Slabo 27px', serif;
+    font-family: 'Noto Serif', serif;
     color: transparent;
     text-shadow: 0 0 0 #ebdbb2;
     font-size: 1.5em;

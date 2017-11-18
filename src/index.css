@@ -31,6 +31,7 @@ body {
     text-decoration: none;
     animation: fadeIn .5s;
     color: #ebdbb2;
+
 }
 
 .square:hover {
@@ -65,6 +66,7 @@ body {
     padding: 4vh;
     min-width: 8vw;
     margin: 10px;
+    transition-duration: 0.1s;
 }
 
 #navbutton:hover{

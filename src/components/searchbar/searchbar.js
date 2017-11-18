@@ -47,16 +47,16 @@ class Searchbar extends React.Component {
             data = this.state.value;
         }
 
-        let patt = /[a-zA-Z0-9]+/g;
 
+        let patt = /[a-zA-Z0-9]+/g;
         //special case to show/hide terminal
-        if (data === 't' || data === 'term') {
+        if (data.toLowerCase() === 't' || data.toLowerCase() === 'term') {
             return 't';
         }
-        if (data === 'mu') {
+        else if (data === 'mu') {
             return 'mu';
         }
-        else if (data.split(' ')[0] === 'chan' && patt.test(data.split(' ')[1])) {
+        else if (data.split(' ')[0] === 'chan' && patt.test(data.split(' ')[1]) && data.length>4) {
             return 'chan ' + data.split(' ')[1];
         }
 
