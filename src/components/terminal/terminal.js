@@ -27,13 +27,19 @@ class Terminal extends React.Component {
 
         switch (this.state.value) {
             case 'help': {
-                this.setState({textA: 'List of avalaible commands:\nw - current weather\nwf - weather forecast for 5 days\nmu - redirect to 4chan /mu/ board\ne, exit or t - close terminal\nrau1 - Studies\nwind - help about wind speed from current weather'});
+                this.setState({textA: 'List of avalaible commands:\nw - current weather\nwf - weather forecast for 5 days\nmu - redirect to 4chan /mu/ board\ne, exit or t - close terminal\nrau1 - Studies\nwind - help about wind speed from current weather\nsilka - what to take to gym \'coz you\'re retard and can never remember'});
                 this.setState({value: ""});
                 break;
             }
             case 'w': {
                 let weather = this.getCurrentWeather();
                 this.getFiveDaysWeather();
+                this.setState({textA: weather});
+                this.setState({value: ""});
+                break;
+            }
+            case 'silka': {
+                let weather = 'Mydło\nAntyperspirant\nSzampon\nRęcznik + ręcznik mały\nButy\nStrój\nSkarpetki + majtki\nWoda\nPortfel\nKłódka\nDokumenty + klucze do samochodu';
                 this.setState({textA: weather});
                 this.setState({value: ""});
                 break;

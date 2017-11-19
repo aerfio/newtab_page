@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.17.0",
-    "firebase": "^4.6.1",
-    "react": "^16.0.0",
+    "axios": "^0.17.1",
+    "firebase": "^4.6.2",
+    "react": "^16.1.1",
     "react-animate-on-change": "^1.0.1",
-    "react-dom": "^16.0.0",
+    "react-dom": "^16.1.1",
     "react-scripts": "1.0.14"
   },
   "scripts": {
@@ -19,6 +19,6 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "gh-pages": "^1.0.0"
+    "gh-pages": "^1.1.0"
   }
 }
