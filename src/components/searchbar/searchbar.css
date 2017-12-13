@@ -16,5 +16,5 @@
 }
 input[type='text']::placeholder{
 
-    color:#ebdbb2;
+    color: rgba(235, 219, 178, 0.34);
 }

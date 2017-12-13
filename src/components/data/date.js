@@ -12,7 +12,9 @@ class Today extends React.Component {
     render() {
         let today = this.state.date;
         let comma = today.toLocaleTimeString('pl-pl', {month: 'long'}).indexOf(',');
+       // let month = today.toLocaleDateString('pl-pl',{weekday: 'long'}).substring(0, comma);
         let month = today.toLocaleTimeString('pl-pl', {month: 'long'}).substring(0, comma);
+
         return (
             <h1 id="data">{today.getDate() + " " + month}</h1>
         );
