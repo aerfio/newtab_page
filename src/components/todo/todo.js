@@ -47,14 +47,15 @@ class TodoBox extends React.Component {
                     <div className={'outerDivTodo'} key={number}>
                         <textarea  className={'noteText'} unselectable={'on'} readOnly={'true'} autoCorrect={'off'}
                                   spellCheck={'false'}
-
-                                  value={localStorage.getItem(tempTab[index])}/>
+                                  value={localStorage.getItem(tempTab[index])}
+                        />
 
                         <div className={'todoButton'} onClick={() => {
                             localStorage.removeItem(tempTab[index]);
                             console.log('number of removed item: '+number);
                             this.setState({value: ''});
-                        }}>{<i className="icon-trash-1">{}</i>}</div>
+                        }}>{<i className="icon-trash-1">{}</i>}
+                        </div>
                     </div>)
                 }
             </div>

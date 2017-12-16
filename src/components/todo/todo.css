@@ -49,13 +49,14 @@ margin-top: 3%;
     background-color: inherit;
     animation: fadeInUp .75s;
     border-bottom: 1px solid #ebdbb2;
-    margin:10px;
+    margin:15px;
     padding-bottom: 10px;
 }
 .noteText{
     padding-top:10px;
-    max-height: 110%;
+    max-height: 90%;
     margin-top: 5px;
+    line-height: 26px;
     width:90%;
     resize: none;
     /*next two lines: no cursor */
@@ -65,6 +66,8 @@ margin-top: 3%;
     font-size: 1.5em;
     background-color: transparent;
     border: none;
+    /*padding:12px;*/
+    /*border: 1px solid black;*/
 }
 
 @keyframes fadeInUp {
