@@ -12,7 +12,7 @@ this.state={
           return(<div id='TimedDownNotesContainer'>
              <button id="plus" onClick={()=>{
                  this.setState({
-                     array: [...this.state.array,1]
+                     array: [...this.state.array, 2]
                  })
              }}/>
                {this.state.array.map((number,index)=>(<textarea key={index} value={number}/>))}
