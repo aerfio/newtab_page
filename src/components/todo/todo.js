@@ -49,7 +49,6 @@ class TodoBox extends React.Component {
                                   spellCheck={'false'}
                                   value={localStorage.getItem(tempTab[index])}
                         />
-
                         <div className={'todoButton'} onClick={() => {
                             localStorage.removeItem(tempTab[index]);
                             console.log('number of removed item: '+number);
