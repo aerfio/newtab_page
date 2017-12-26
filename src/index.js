@@ -7,6 +7,7 @@ import Searchbar from './components/searchbar/searchbar'
 import Plan from './components/plan/plan'
 import Terminal from './components/terminal/terminal'
 import TodoBox from './components/todo/todo'
+import TimedDownNotes from './components/timedDownNotes/timedDownNotes'
 import AnimateOnChange from 'react-animate-on-change'
  // eslint-disable-next-line
 import fire from './fire';
@@ -19,6 +20,8 @@ function Anim (props){
         {props.value}
     </AnimateOnChange>
 }
+
+
 class RedirectRectangle extends React.Component {
     constructor(props){
     super(props);
@@ -67,8 +70,10 @@ class RedirectRectangle extends React.Component {
 
         }
         else{
-            return(
-                <TodoBox/>
+            return(<div>
+                    <TodoBox/>
+                    <TimedDownNotes/>
+                </div>
             );
         }
     }
