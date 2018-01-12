@@ -1,6 +1,7 @@
 import React from 'react';
 import './terminal.css';
 import axios from 'axios';
+import * as personal from '../../modules/OpenWeatherMapApi'
 
 class Terminal extends React.Component {
     constructor(props) {
@@ -40,7 +41,7 @@ class Terminal extends React.Component {
                 break;
             }
             case 'silka': {
-                let weather = 'Mydło\nAntyperspirant\nSzampon\nRęcznik + ręcznik mały\nButy\nStrój\nSkarpetki + majtki\nWoda\nPortfel\nKłódka\nDokumenty + klucze do samochodu';
+                let weather = personal.gym;
                 this.setState({textA: weather});
                 this.setState({value: ""});
                 break;
@@ -101,21 +102,12 @@ class Terminal extends React.Component {
 
     componentDidMount() {
         //fucking weather I swear to god
-        let apiKey = 'af6eccccbe9e42573102a3f5a16ceb48';
-        let city = 'Gliwice';
-        let url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric&appid=' + apiKey;
-        // fetch(url)
-        //     .then((response) => {
-        //         return response.json()
-        //     })
-        //     .then((json) => {
-        //     console.log(json);
-        //         this.setState({dataCurrent: json});
-        //     });
+        let url = personal.urlCur;
+
        axios.get(url).then(response => this.setState({dataCurrent: response.data}));
 
         //5 days
-        url = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=metric&appid=' + apiKey;
+        url = personal.urlFive;
         fetch(url)
             .then((response) => {
                 return response.json()
