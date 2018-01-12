@@ -7,7 +7,6 @@
     transition-duration: 0.1s;
     text-decoration: none;
     animation: fadeIn .3s;
-
 }
 
 @keyframes fadeIn {
@@ -41,7 +40,7 @@ margin-top: 3%;
 
 }
 .outerDivTodo{
-    height:10%;
+    height: auto;
     display: flex;
     justify-content:space-between;
     align-items: center;
@@ -50,13 +49,16 @@ margin-top: 3%;
     animation: fadeInUp .75s;
     border-bottom: 1px solid #ebdbb2;
     margin:15px;
-    padding-bottom: 10px;
+    /*padding-bottom: 10px;*/
 }
 .noteText{
-    /*padding-top:10px;*/
-    max-height: 90%;
-    margin-top: 5px;
-    line-height: 26px;
+
+    padding-top: 10px;
+
+    /*max-height: 90%;*/
+    /*margin-top: 5px;*/
+    /*line-height: 26px;*/
+
     width:90%;
     resize: none;
     /*next two lines: no cursor */
@@ -66,9 +68,8 @@ margin-top: 3%;
     font-size: 1.5em;
     background-color: transparent;
     border: none;
-    padding-top: 12px;
-    padding-bottom:2px;
-    padding-right: 12px;
+
+    padding-bottom: 10px;
     /*border: 1px solid black;*/
 }
 
