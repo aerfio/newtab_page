@@ -2,6 +2,7 @@ import React from 'react';
 import './terminal.css';
 import axios from 'axios';
 import * as personal from '../../modules/OpenWeatherMapApi'
+import Textarea from "react-textarea-autosize";
 
 class Terminal extends React.Component {
     constructor(props) {
@@ -147,7 +148,7 @@ class Terminal extends React.Component {
                 <input ref={ref => this.input = ref} id='terminal' type="terminal" value={'>'+this.state.value} autoCorrect={'off'} spellCheck={'false'}
                        onChange={this.handleChange}/>
             </form>
-            <textarea tabIndex={'20'} id='textarea' autoCorrect={'off'} spellCheck={'false'} readOnly={'true'}
+            <Textarea tabIndex={'20'} id='textarea' autoCorrect={'off'} spellCheck={'false'} readOnly={'true'}
                       value={this.state.textA}/>
 
         </div>);
