@@ -7,10 +7,9 @@ import Searchbar from './components/searchbar/searchbar'
 import Plan from './components/plan/plan'
 import Terminal from './components/terminal/terminal'
 import TodoBox from './components/todo/todo'
-import TimedDownNotes from './components/timedDownNotes/timedDownNotes'
 import AnimateOnChange from 'react-animate-on-change'
- // eslint-disable-next-line
-import fire from './fire';
+
+// eslint-disable-next-line
 
 function Anim (props){
     return <AnimateOnChange
@@ -72,7 +71,7 @@ class RedirectRectangle extends React.Component {
         else{
             return(<div>
                     <TodoBox/>
-                    <TimedDownNotes/>
+                    /*<TimedDownNotes/>*/ /*not needed for now*/
                 </div>
             );
         }
