@@ -69,9 +69,9 @@ class RedirectRectangle extends React.Component {
 
         }
         else{
-            return(<div>
+            return (<div>
                     <TodoBox/>
-                    /*<TimedDownNotes/>*/ /*not needed for now*/
+
                 </div>
             );
         }
