@@ -8,8 +8,8 @@ import Plan from './components/plan/plan'
 import Terminal from './components/terminal/terminal'
 import TodoBox from './components/todo/todo'
 import AnimateOnChange from 'react-animate-on-change'
- // eslint-disable-next-line
-import fire from './fire';
+
+// eslint-disable-next-line
 
 function Anim (props){
     return <AnimateOnChange
@@ -19,6 +19,8 @@ function Anim (props){
         {props.value}
     </AnimateOnChange>
 }
+
+
 class RedirectRectangle extends React.Component {
     constructor(props){
     super(props);
@@ -67,8 +69,10 @@ class RedirectRectangle extends React.Component {
 
         }
         else{
-            return(
-                <TodoBox/>
+            return(<div>
+                    <TodoBox/>
+                    /*<TimedDownNotes/>*/ /*not needed for now*/
+                </div>
             );
         }
     }

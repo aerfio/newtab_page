@@ -186,7 +186,7 @@ class Terminal extends React.Component {
                 temp=' '+temp;
             }
             let tmp=new Date(forecast.list[tempTab[i]].dt_txt.slice(0, 10));
-            toReturn+=tmp.toLocaleDateString('en-gb',{weekday: 'short'})+' '+forecast.list[tempTab[i]].dt_txt.slice(8, 10) + '.' + forecast.list[tempTab[i]].dt_txt.slice(5, 7) + ' ' + forecast.list[tempTab[i]].dt_txt.slice(-8, -3)+': '+ temp+'°C, '+forecast.list[tempTab[i]].wind.speed+ ' m/s, '+forecast.list[tempTab[i]].weather[0].description.replace(/\b\w/g, l => l.toUpperCase())+'\n';
+            toReturn+=tmp.toLocaleDateString('en-gb',{weekday: 'short'})+' '+forecast.list[tempTab[i]].dt_txt.slice(8, 10) + '.' + forecast.list[tempTab[i]].dt_txt.slice(5, 7) + ' ' + forecast.list[tempTab[i]].dt_txt.slice(-8, -3)+': '+ temp+'°C, '+forecast.list[tempTab[i]].wind.speed.toFixed(2)+ ' m/s, '+forecast.list[tempTab[i]].weather[0].description.replace(/\b\w/g, l => l.toUpperCase())+'\n';
            //next line separates days so it looks more grouped
             if(i<tempTab.length-1 && forecast.list[tempTab[i]].dt_txt.slice(8, 10)!==forecast.list[tempTab[i+1]].dt_txt.slice(8, 10)){
                 toReturn+='\n';
