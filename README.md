@@ -1,1 +1,1 @@
-Here we'll have timed down notes that will expire in week or two, maybe we'll add some kind of expiration date selector, idk
+#Replacement of about:newtab

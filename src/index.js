@@ -8,8 +8,8 @@ import Plan from './components/plan/plan'
 import Terminal from './components/terminal/terminal'
 import TodoBox from './components/todo/todo'
 import AnimateOnChange from 'react-animate-on-change'
+import * as link from './modules/links/links'
 
-// eslint-disable-next-line
 
 function Anim (props){
     return <AnimateOnChange
@@ -29,11 +29,11 @@ class RedirectRectangle extends React.Component {
     }
     }
     render() {
-        let personalTab = Array.of('Personal', 'Fagbook', 'Onet', 'ImgSearch', 'Trello', 'dumblr');
-        let personalLinks = Array.of('https://www.facebook.com/home.php', 'http://www.onet.pl', 'https://images.google.com/', 'https://trello.com/b/v9HDsFRa/2do', 'http://mywallofnoise.tumblr.com/');
+        let personalTab = Array.of(link.headers[0], link.one[0], link.two[0], link.three[0], link.four[0], link.five[0]);
+        let personalLinks = Array.of(link.one[1], link.two[1], link.three[1], link.four[1], link.five[1]);
 
-        let stuffTab = Array.of('Stuff', '/wg/', '/mu/', 'Google Pogoda', 'Google Drive', 'Studia rau1');
-        let stuffLinks = Array.of('https://boards.4chan.org/wg/', 'https://boards.4chan.org/mu/', 'https://www.google.pl/#q=pogoda', 'https://drive.google.com/drive/my-drive', 'https://platforma.polsl.pl/rau1/course/index.php?categoryid=26');
+        let stuffTab = Array.of(link.headers[1], link.six[0], link.seven[0], link.eight[0], link.nine[0], link.ten[0]);
+        let stuffLinks = Array.of(link.six[1], link.seven[1], link.eight[1], link.nine[1], link.ten[1]);
         let page;
         let links;
         switch (this.props.value) {
