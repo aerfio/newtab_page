@@ -11,6 +11,18 @@
     /*background-color: blue;*/
 }
 
+#plan::before {
+    content: '';
+    display: block;
+    height: 400px;
+    width: 4px;
+    background-color: #555555;
+    margin-top: 15px;
+    float: left;
+    margin-left: -4px;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+}
 #plan:hover {
     right: 0;
 }
