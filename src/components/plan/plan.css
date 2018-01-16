@@ -2,7 +2,7 @@
     z-index: 1000;
     position: fixed;
     top: 15px;
-    right: -612px;
+    right: -614px;
     width: 614px;
     -webkit-transition-duration: 0.2s;
     -moz-transition-duration: 0.2s;
@@ -15,11 +15,11 @@
     content: '';
     display: block;
     height: 400px;
-    width: 4px;
+    width: 6px;
     background-color: #555555;
     margin-top: 15px;
     float: left;
-    margin-left: -4px;
+    margin-left: -6px;
     border-bottom-left-radius: 3px;
     border-top-left-radius: 3px;
 }
