@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif');
 #todo{
-    height:40vh;
+    /*height:20vh;*/
     width:33%;
     margin-right: auto;
     margin-left: auto;
@@ -48,7 +48,7 @@ margin-top: 3%;
     background-color: inherit;
     animation: fadeInUp .75s;
     border-bottom: 1px solid #ebdbb2;
-    margin:15px;
+    margin: 13px;
     /*padding-bottom: 10px;*/
 }
 .noteText{
