@@ -4,6 +4,7 @@ import axios from 'axios';
 import * as personal from '../../modules/OpenWeatherMapApi'
 import Textarea from "react-textarea-autosize";
 
+
 class Terminal extends React.Component {
     constructor(props) {
         super(props);

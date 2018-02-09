@@ -33,9 +33,7 @@ class TodoBox extends React.Component {
     render() {
         let tempTab = Array.of();
         for (let i = 0; i < localStorage.length; i++) {
-            if (!localStorage.key(i).toString().includes("date")) { //if key includes storage it's used to display notes
                 tempTab.push(localStorage.key(i));
-            }
         }
         tempTab.sort((a,b)=>a-b);
         return (

@@ -5,12 +5,34 @@
     width: 100px;
     height: 100px;
     z-index: 1000;
-    background-color: aquamarine;
-    border: 10px solid white;
 }
 
 #plus {
     width: 50px;
     height: 50px;
     background-color: #2bf100;
+}
+
+.longNote {
+    animation: fadeInUp .75s;
+    width: 10vw;
+    background-color: aqua;
+    margin: 5px;
+}
+
+.longNoteText {
+    width: 80%
+}
+
+/*TODO change this animation to something more unique*/
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }

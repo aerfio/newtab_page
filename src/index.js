@@ -51,28 +51,25 @@ class RedirectRectangle extends React.Component {
                 links = personalLinks;
                 break;
         }
-        if(this.props.value !==2){
 
+        if(this.props.value !==2){
         return (
             <div className="square">
-                     <h1 className='header'>{<Anim value ={page[0]}/>}</h1>
-                        <ul>
+                <h1 className='header'>{<Anim value={page[0]}/>}</h1>
+                <ul>
                             <li><a href={links[0]}>{<Anim value ={page[1]}/>}</a></li>
                             <li><a href={links[1]}>{<Anim value ={page[2]}/>}</a></li>
                             <li><a href={links[2]}>{<Anim value ={page[3]}/>}</a></li>
                             <li><a href={links[3]}>{<Anim value ={page[4]}/>}</a></li>
                             <li><a href={links[4]}>{<Anim value ={page[5]}/>}</a></li>
-                        </ul>
+                </ul>
             </div>
         );
 
-
         }
         else{
-            return (<div>
+            return (
                     <TodoBox/>
-
-                </div>
             );
         }
     }
@@ -121,6 +118,7 @@ class Game extends React.Component {
     }
 
     render() {
+        //TODO firebase deploy corrent vrsio without database
         return (
             <div className="game">
                 <Terminal value={this.state.value}  onSubmit={() => {this.setState({value: this.state.value === '0' ? '1' : '0'})
