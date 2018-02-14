@@ -40,7 +40,7 @@ class Searchbar extends React.Component {
         let l = this.state.value.length;
         let x = this.state.value.substr(l - 2, 2);
         let data;
-        if (x === '!y' || x === '!g' || x === '!t' || x === '!p') {
+        if (x === '!y' || x === '!g' || x === '!t' || x === '!pl') {
             data = this.state.value.substr(0, l - 2);
         }
         else {
@@ -76,7 +76,7 @@ class Searchbar extends React.Component {
                 return 'https://www.google.pl/search?q=' + link;
             case '!t':
                 return 'https://translate.google.pl/#en/pl/' + link;
-            case '!p':
+            case '!pl':
                 return 'https://translate.google.pl/#pl/en/' + link;
             default:
                 return 'https://www.google.pl/search?q=' + link;

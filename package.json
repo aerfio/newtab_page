@@ -2,6 +2,7 @@
   "name": "NewTabProject",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://aerfio.github.io/newtab_page",
   "dependencies": {
     "axios": "^0.17.1",
     "firebase": "^4.6.2",
