@@ -157,8 +157,8 @@ class Terminal extends React.Component {
 
     getFiveDaysWeather() {
         let forecast = this.state.dataFiveDays;
-       // console.log(forecast);
-        if (forecast.length===0) {
+        // eslint-disable-next-line
+        if (forecast.length == 0) {
             return 'Can\'t connect to internet'
         }
 
@@ -192,7 +192,8 @@ class Terminal extends React.Component {
 
     getCurrentWeather() {
         let pogoda = this.state.dataCurrent;
-        if (pogoda.length===0) {
+        // eslint-disable-next-line
+        if (pogoda.length == 0) {
             return 'Can\'t connect to internet';
         }
         return 'Current weather:\n' + pogoda.weather[0].description.replace(/\b\w/g, l => l.toUpperCase()) + '\nTemp: ' + pogoda.main.temp + '°C\nClouds: ' + pogoda.clouds.all + '%' +
