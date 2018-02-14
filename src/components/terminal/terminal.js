@@ -37,7 +37,6 @@ class Terminal extends React.Component {
             }
             case 'w': {
                 let weather = this.getCurrentWeather();
-                this.getFiveDaysWeather();
                 this.setState({textA: weather});
                 this.setState({value: ""});
                 break;
@@ -157,6 +156,9 @@ class Terminal extends React.Component {
 
     getFiveDaysWeather() {
         let forecast = this.state.dataFiveDays;
+        if (forecast.cod === 401) {
+            return 'Bad Api key'
+        }
         // eslint-disable-next-line
         if (forecast.length == 0) {
             return 'Can\'t connect to internet'
@@ -194,8 +196,9 @@ class Terminal extends React.Component {
         let pogoda = this.state.dataCurrent;
         // eslint-disable-next-line
         if (pogoda.length == 0) {
-            return 'Can\'t connect to internet';
+            return 'Can\'t connect to internet and/or bad Api key';
         }
+
         return 'Current weather:\n' + pogoda.weather[0].description.replace(/\b\w/g, l => l.toUpperCase()) + '\nTemp: ' + pogoda.main.temp + '°C\nClouds: ' + pogoda.clouds.all + '%' +
             '\nWind: ' + pogoda.wind.speed + ' m/s';
     }
