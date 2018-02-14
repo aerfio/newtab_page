@@ -8,6 +8,7 @@ import Plan from './components/plan/plan'
 import Terminal from './components/terminal/terminal'
 import TodoBox from './components/todo/todo'
 import AnimateOnChange from 'react-animate-on-change'
+import TimedDownNotes from './components/timedDownNotes/timedDownNotes'
 import * as link from './modules/links/links'
 
 
@@ -132,6 +133,7 @@ class Game extends React.Component {
                         this.setState({value: this.state.value === '0' ? '1' : '0'})
                 }}/>
                 <NavBar/>
+                <TimedDownNotes/>
             </div>
         );
     }

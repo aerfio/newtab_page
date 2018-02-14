@@ -8,7 +8,6 @@ class TodoBox extends React.Component {
         super(props);
         this.state = {
             value: '',
-            max: 0,
         }
     }
 
@@ -25,7 +24,7 @@ class TodoBox extends React.Component {
         this.setState({value: event.target.value});
     };
     handleSubmit = (event) => {
-        localStorage.setItem((this.getMax()+1), this.state.value);
+        localStorage.setItem(this.getMax() + 1, this.state.value);
         this.setState({value: ''});
         event.preventDefault();
     };
@@ -33,6 +32,7 @@ class TodoBox extends React.Component {
     render() {
         let tempTab = Array.of();
         for (let i = 0; i < localStorage.length; i++) {
+            if (!localStorage.key(i).includes('date'))
                 tempTab.push(localStorage.key(i));
         }
         tempTab.sort((a,b)=>a-b);

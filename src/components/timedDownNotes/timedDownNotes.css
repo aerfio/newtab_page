@@ -2,37 +2,78 @@
     position: absolute;
     top: 20px;
     left: 20px;
-    width: 100px;
+    width: 20%;
     height: 100px;
     z-index: 1000;
+    /*border: 1px white solid;*/
 }
 
 #plus {
     width: 50px;
     height: 50px;
-    background-color: #2bf100;
+    font-size: 2.5vw;
+    color: #ebdbb2;
+    border: 1px solid #ebdbb2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.longNote {
-    animation: fadeInUp .75s;
-    width: 10vw;
-    background-color: aqua;
-    margin: 5px;
-}
-
-.longNoteText {
-    width: 80%
+.outerNotes {
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: inherit;
+    animation: AppearFromRight .75s;
+    border-bottom: 1px solid #ebdbb2;
+    margin: 13px;
 }
 
 /*TODO change this animation to something more unique*/
-@keyframes fadeInUp {
+@keyframes AppearFromRight {
     from {
         opacity: 0;
-        transform: translate3d(0, 100%, 0);
+        transform: translate3d(33%, 0, 0);
     }
 
     to {
         opacity: 1;
         transform: none;
     }
+}
+
+#LongNotesForm {
+    margin-bottom: 5px;
+    background-color: #222222;
+}
+
+#LongNotesInput {
+
+    margin-top: 3%;
+    width: 100%;
+    text-align: center;
+    outline: none;
+    font-family: 'Noto Serif', serif;
+    font-size: 2em;
+    border: 1px solid #ebdbb2;
+    color: #ebdbb2;
+}
+
+.LongNotesText {
+    padding-top: 10px;
+    width: 90%;
+    resize: none;
+    /*next two lines: no cursor */
+    font-family: 'Noto Serif', serif;
+    color: transparent;
+    text-shadow: 0 0 0 #ebdbb2;
+    font-size: 1.5em;
+    background-color: transparent;
+    border: none;
+    padding-bottom: 10px;
+}
+
+input {
+    background-color: #222222;
 }
