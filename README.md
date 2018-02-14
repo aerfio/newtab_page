@@ -1,1 +1,1 @@
-#Replacement of about:newtab
+Replacement of about:newtab
