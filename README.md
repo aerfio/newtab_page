@@ -34,11 +34,10 @@ Because I use the one in the top-left corner as long-term notes, and those under
 
 ## Neat studies classes plan
 
-Because I tend to forget this shit easily, so I need fast way to remember it.
+Hover over top right corner of screen (there's grey handle). Because I tend to forget this shit easily, so I need fast way to remember it.
 
 ## Additional notes
 
-Don't forget, that if you
- want to have working weather forecast in terminal then you have to fill `/src/modules/OpenWeatherMapApi.js` with your own api key and city.
+Don't forget that if you want to have working weather forecast in terminal then you have to fill `/src/modules/OpenWeatherMapApi.js` with your own api key and city.
 
 Also fill in `/src/modules/links/links.js` with your own links.
