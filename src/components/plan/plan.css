@@ -4,17 +4,19 @@
     top: 15px;
     right: -614px;
     width: 614px;
+
     -webkit-transition-duration: 0.2s;
     -moz-transition-duration: 0.2s;
     -o-transition-duration: 0.2s;
     transition-duration: 0.2s;
     /*background-color: blue;*/
+
 }
 
 #plan::before {
     content: '';
     display: block;
-    height: 400px;
+    height: 510px;
     width: 6px;
     background-color: #555555;
     margin-top: 15px;
@@ -29,5 +31,6 @@
 
 #plan img {
     margin: 0;
+
     max-width: 100%;
 }

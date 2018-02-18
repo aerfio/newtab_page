@@ -2,7 +2,7 @@
 ## Demo
 https://aerfio.github.io/newtab_page
 ## Local instalation
-To use type in
+To run it locally use those commands inside project folder:
 ### `npm install`
 and then
 ### `npm start`
