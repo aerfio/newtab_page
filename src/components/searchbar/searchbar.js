@@ -30,8 +30,10 @@ class Searchbar extends React.Component {
             event.preventDefault();
         }
         else {
-            window.location.assign(link);
             event.preventDefault();
+            console.log(link);
+            // window.location.assign(link);
+
         }
     }
 
@@ -40,7 +42,7 @@ class Searchbar extends React.Component {
         let l = this.state.value.length;
         let x = this.state.value.substr(l - 2, 2);
         let data;
-        if (x === '!y' || x === '!g' || x === '!t' || x === '!pl') {
+        if (x === '!y' || x === '!g' || x === '!t' || x === '!p') {
             data = this.state.value.substr(0, l - 2);
         }
         else {
@@ -68,7 +70,6 @@ class Searchbar extends React.Component {
             })
         }
         else link = data;
-
         switch (x) {
             case '!y':
                 return 'https://www.youtube.com/results?search_query=' + link;
@@ -76,11 +77,12 @@ class Searchbar extends React.Component {
                 return 'https://www.google.pl/search?q=' + link;
             case '!t':
                 return 'https://translate.google.pl/#en/pl/' + link;
-            case '!pl':
+            case '!p':
                 return 'https://translate.google.pl/#pl/en/' + link;
             default:
                 return 'https://www.google.pl/search?q=' + link;
         }
+
     }
 
     render() {

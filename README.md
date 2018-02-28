@@ -14,7 +14,7 @@ and then
 Search box uses google.pl, unless you use one of special flags:
 * `!y` searches Youtube
 * `!t` translates what you wrote from english to polish languege
-* `!pl` the other way
+* `!p` the other way
 
 ## 4chan redirecting
 
