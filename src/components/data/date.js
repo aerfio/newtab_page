@@ -1,5 +1,8 @@
 import React from 'react';
+import moment from 'moment'
+
 import './date.css';
+import 'moment/locale/pl';
 
 class Today extends React.Component {
     constructor(props) {
@@ -10,13 +13,11 @@ class Today extends React.Component {
     }
 
     render() {
-        let today = this.state.date;
-        let comma = today.toLocaleTimeString('pl-pl', {month: 'long'}).indexOf(',');
-       // let month = today.toLocaleDateString('pl-pl',{weekday: 'long'}).substring(0, comma);
-        let month = today.toLocaleTimeString('pl-pl', {month: 'long'}).substring(0, comma);
+
+        let today = moment().format('LL').substr(0, moment().format('LL').length - 4);
 
         return (
-            <h1 id="data">{today.getDate() + " " + month}</h1>
+            <h1 id="data">{today}</h1>
         );
     }
 }
