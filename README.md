@@ -30,11 +30,11 @@ Type in `t` or `term` into searchbox to show terminal in which you have just typ
 
 ## Two independent note boxes
 
-Because I use the one in the top-left corner as long-term notes, and those under `Todo` button for temporary shit.
+Because I use the one in the top-left corner as long-term notes, and those under `Todo` button for temporary notes.
 
 ## Neat studies classes plan
 
-Hover over top right corner of screen (there's grey handle). Because I tend to forget this shit easily, so I need fast way to remember it.
+Hover over top right corner of screen (there's grey handle). Because I tend to forget this plan easily, so I need fast way to remember it.
 
 ## Additional notes
 
